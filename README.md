@@ -24,4 +24,4 @@ PHP, MySQL, HTML, CSS, JavaScript, XAMPP.
 2. Открыть `http://localhost/store/`.
 
 ## Автор
-va1t, 2026
+Гольчиков Дмитрий Юрьевич, 2026
