@@ -1,0 +1,154 @@
+/* admin.css — Стили панели управления */
+
+.admin-layout {
+  display:       grid;
+  grid-template-columns: 220px 1fr;
+  min-height:    calc(100vh - 64px);
+}
+
+/* Боковая панель */
+.admin-sidebar {
+  background:  var(--color-dark);
+  padding:     24px 0;
+  position:    sticky;
+  top:         64px;
+  height:      calc(100vh - 64px);
+  overflow-y:  auto;
+}
+
+.admin-sidebar__role {
+  padding:       8px 20px 20px;
+  font-size:     .72rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color:         rgba(255,255,255,.4);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 8px;
+}
+
+.admin-sidebar__link {
+  display:     block;
+  padding:     10px 20px;
+  color:       rgba(255,255,255,.65);
+  font-size:   .9rem;
+  font-weight: 500;
+  transition:  background var(--transition), color var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.admin-sidebar__link:hover,
+.admin-sidebar__link.active {
+  background:  rgba(255,255,255,.06);
+  color:       #fff;
+  border-left-color: var(--color-accent);
+}
+
+/* Основная область */
+.admin-main {
+  padding:    32px;
+  background: var(--color-surface);
+  min-height: calc(100vh - 64px);
+}
+
+.admin-title {
+  font-family:   var(--font-display);
+  font-size:     2rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color:         var(--color-dark);
+}
+
+.admin-page-header {
+  display:     flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.admin-page-header .admin-title { margin-bottom: 0; }
+
+/* Форма товара */
+.admin-form {
+  background:    var(--color-bg);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding:       28px;
+}
+
+.admin-form__grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   32px;
+  margin-bottom:         24px;
+}
+
+/* Сетка размеров-остатков */
+.stock-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap:                   8px;
+}
+
+.stock-item {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+  gap:            4px;
+  font-size:      .8rem;
+  font-weight:    600;
+  color:          var(--color-muted);
+}
+
+/* KPI-карточки для отчётов */
+.kpi-row {
+  display:               grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap:                   16px;
+  margin-bottom:         8px;
+}
+
+.kpi-card {
+  background:    var(--color-bg);
+  border:        1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding:       20px;
+}
+
+.kpi-card__label {
+  font-size:      .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color:          var(--color-muted);
+  margin-bottom:  6px;
+}
+
+.kpi-card__value {
+  font-family:   var(--font-display);
+  font-size:     1.6rem;
+  letter-spacing: .03em;
+  color:         var(--color-dark);
+  margin-bottom: 10px;
+}
+
+.kpi-card__bar {
+  height:        4px;
+  background:    var(--color-border);
+  border-radius: 999px;
+  overflow:      hidden;
+}
+
+.kpi-card__bar-fill {
+  height:     100%;
+  background: var(--color-accent);
+  border-radius: 999px;
+  transition: width .6s ease;
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 900px) {
+  .admin-layout { grid-template-columns: 1fr; }
+  .admin-sidebar { position: static; height: auto; display: flex; flex-wrap: wrap; gap: 4px; padding: 12px; }
+  .admin-sidebar__role { display: none; }
+  .admin-form__grid { grid-template-columns: 1fr; }
+}
