@@ -16,8 +16,7 @@ PHP, MySQL, HTML, CSS, JavaScript, XAMPP.
 
 ## Установка
 1. Скопировать проект в папку `htdocs`.
-2. Импортировать `schema.sql` в MySQL.
-3. Настроить `config/db.php`.
+2. Импортировать `shoe_store (2).sql` в MySQL.
 
 ## Запуск
 1. Запустить Apache и MySQL в XAMPP.
